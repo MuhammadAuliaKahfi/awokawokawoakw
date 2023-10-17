@@ -1,0 +1,27 @@
+<%-include('../partials/header.html')%>
+    <link rel="stylesheet" href="/../../css/customer.css">
+    <title>Halaman Utama</title>
+    </head>
+
+    <body>
+
+        <%-include('partials/navbar.html')%>
+        <div class="container-fluid">
+            <div class="row">
+                <%-include('partials/sidebar.html')%>
+                <div class="col-md-10 content">
+                    <p class="display-2 inven">Home</p>
+                    <div class="alert alert-primary" role="alert">
+                        Jumlah buku yang dipinjam: <span style="float: right;"><%=tbbbc%></span>
+                    </div>
+                    <div class="alert alert-primary" role="alert">
+                        Buku dipinjam dalam 7 hari terakhir: <span style="float: right;">7</span>
+                    </div>
+                    <div class="alert alert-primary" role="alert">
+                        Buku yang dipinjam dalam 30 hari terakhir: <span style="float: right;">7</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <%-include('../partials/footer.html')%>

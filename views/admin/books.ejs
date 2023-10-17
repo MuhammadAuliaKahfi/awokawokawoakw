@@ -1,0 +1,96 @@
+<%-include('../partials/header.html')%>
+    <link rel="stylesheet" href="/../../css/admin.css">
+    <title>Buku</title>
+    </head>
+
+    <body>
+
+        <%-include('partials/navbar.html')%>
+            <div class="container-fluid">
+                <div class="row">
+                    <%-include('partials/sidebar.html')%>
+                        <div class="col-md-10 content">
+                            <form method="post">
+                                <div class="input-group mb-5 search-bar">
+                                    <div class="input-group-prepend">
+                                        <label class="input-group-text" for="inputGroupSelect01">Cari Buku</label>
+                                    </div>
+                                    <select class="custom-select dropbar cari" id="inputGroupSelect01" name="searchBy">
+                                            <option selected>Oleh...</option>
+                                            <option value="genre">Genre</option>
+                                            <option value="title">Judul</option>
+                                            <option value="author">Pengarang</option>
+                                            <option value="publisher">Penerbit</option>
+                                            <option value="edition">Edisi</option>
+                                            <option value="isbn">ISBN</option>
+                                            <option value="pages">Halaman</option>
+                                        </select>
+                                    <div class="form-inline">
+
+                                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="word">
+                                        <button class="btn" type="submit">Cari</button>
+                                    </div>
+                                </div>
+                            </form>
+
+                            <table class="table table-striped table-light table-hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Genre</th>
+                                        <th scope="col">Judul</th>
+                                        <th scope="col">Pengarang</th>
+                                        <th scope="col">Penerbit</th>
+                                        <th scope="col">Edisi</th>
+                                        <th scope="col">ISBN</th>
+                                        <th scope="col">Halaman</th>
+                                        <th scope="col">Tindakan</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% for(var i=0; i< res.length; i++){ %>
+                                        <tr>
+                                            <th scope="row">
+                                                <%=res[i].book_id%>
+                                            </th>
+                                            <td>
+                                                <%=res[i].genre%>
+                                            </td>
+                                            <td>
+                                                <%=res[i].title%>
+                                            </td>
+                                            <td>
+                                                <%=res[i].author%>
+                                            </td>
+                                            <td>
+                                                <%=res[i].publisher%>
+                                            </td>
+                                            <td>
+                                                <%=res[i].edition%>
+                                            </td>
+                                            <td>
+                                                <%=res[i].isbn%>
+                                            </td>
+                                            <td>
+                                                <%=res[i].pages%>
+                                            </td>
+                                            <td>
+                                                <% if(res[i].user_id) { %>
+                                                    <a href="/admin/books/edit/<%=res[i].book_id%>">Ubah Buku</a> |
+                                                    <a href="/admin/books/delete/<%=res[i].book_id%>">Hapus Buku</a>
+                                                <% } else { %>
+                                                    <a href="/admin/books/<%=res[i].book_id%>/issue">Buku Yang Dipinjam</a> |
+                                                    <a href="/admin/books/edit/<%=res[i].book_id%>">Ubah Buku</a> |
+                                                    <a href="/admin/books/delete/<%=res[i].book_id%>">Hapus Buku</a>
+                                                <% } %>
+                                            </td>
+                                        </tr>
+                                        <% } %>
+
+                                </tbody>
+                            </table>
+                        </div>
+                </div>
+            </div>
+
+            <%-include('../partials/footer.html')%>

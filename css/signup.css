@@ -1,0 +1,47 @@
+.bg-image {
+    background-image: url('../images/bookshelf.png');
+    min-height: 100vh;
+    max-width: 100vw;
+    background-position: center;
+    background-repeat: no-repeat;   
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.signup-form {
+    background-color: rgba(128, 128, 128, 0.636);
+    background-size: cover;
+    border: 3px solid white;
+    border-radius: 10px;
+    min-height: 43rem;
+    min-width: 20rem;
+    margin: 3rem auto;
+}
+
+.alert-primary {
+    background-color: rgb(200, 195, 195);
+    font-family: 'Roboto';
+    border: 2px solid rgb(0, 0, 0);
+    color: rgb(69, 64, 64);
+    font-size: 20px;
+}
+
+.header {
+    font-family: 'Roboto';
+    text-align: center;
+    color: white;
+    text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+}
+
+.submit-button {
+    text-align: center;
+}
+
+.form-group{
+    font-weight: 550;
+    color: white;
+}
+.gender{
+    font-weight: 550;
+    color: white;
+}

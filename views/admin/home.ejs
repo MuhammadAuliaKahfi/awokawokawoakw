@@ -1,0 +1,38 @@
+<%-include('../partials/header.html')%>
+    <link rel="stylesheet" href="/../../css/admin.css">
+    <title>Ruang Admin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link rel="icon" href="/images/chivalry.png" sizes="16x16">
+    </head>
+
+    <body>
+
+        <%-include('partials/navbar.html')%>
+        <div class="container-fluid">
+            <div class="row">
+                <%-include('partials/sidebar.html')%>
+                <div class="col-md-10 content">
+                    <p class="display-2 inven">Informasi</p>
+                    <div class="alert alert-primary" role="alert">
+                        Jumlah Buku: <span style="float: right;"><%=bk%></span>
+                    </div>
+                    <div class="alert alert-primary" role="alert">
+                        Jumlah Pengguna: <span style="float: right;"><%=usr%></span>
+                    </div>
+                    <div class="alert alert-primary" role="alert">
+                        Jumlah buku yang dipinjam: <span style="float: right;"><%=brwd%></span>
+                    </div>
+                    <div class="alert alert-primary" role="alert">
+                        Total buku yang dipinjam dalam 30 hari terakhir: <span style="float: right;"><%=mb%></span>
+                    </div>
+                    <div class="alert alert-primary" role="alert">
+                        Buku yang paling banyak dipinjam dalam 30 hari terakhir: <span style="float: right;"><%=mbb.title%> by <%=mbb.author%> | Total: <%=mbb.magnitude%> times</span>
+                    </div>
+                    <div class="alert alert-primary" role="alert">
+                        Buku yang paling banyak diminta: <span style="float: right;"><%=mrb.title%> by <%=mrb.author%> | Total: <%=mrb.magnitude%> times</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <%-include('../partials/footer.html')%>
